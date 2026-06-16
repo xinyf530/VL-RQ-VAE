@@ -7,7 +7,8 @@ def generate_full_embeddings(meta_json_path, id_mapping_path, output_pt_path, ba
     print("1. 加载 BGE-large-en 模型...")
     # 指定你需要的 GPU 设备
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
-    model = SentenceTransformer('/workspace/my_folder/luozijian/models/bge-en', device=device)
+    # model = SentenceTransformer('/workspace/my_folder/luozijian/models/bge-en', device=device)
+    model = SentenceTransformer('BAAI/bge-large-en-v1.5', device=device)
     
     # 开启半精度推理以节省显存并加速
     if device == "cuda:3":
