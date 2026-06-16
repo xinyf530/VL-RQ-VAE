@@ -150,9 +150,9 @@ def process_domain_unidirectional(domain_name, review_file, meta_file, base_cach
     print(f"    - 数据稀疏度: {sparsity:.6f}")
 
 if __name__ == "__main__":
-    DATA_DIR1 = "/workspace/my_folder/luozijian/dataset/amazon2023/review"
-    DATA_DIR2 = "/workspace/my_folder/luozijian/dataset/amazon2023/meta"
-    CACHE_DIR = "/workspace/user_code/baseline/RQ-VAE/data/Toys"
+    DATA_DIR1 = "/data1/datasets/amazon2023/review"
+    DATA_DIR2 = "/data1/datasets/amazon2023/meta"
+    CACHE_DIR = "/data1/xinyuefeng/VL-RQ-VAE/baseline/RQ-VAE/data/Toys"
     
     domains_to_process = {"Toys": {"review": os.path.join(DATA_DIR1, "Toys_and_Games.jsonl"), "meta": os.path.join(DATA_DIR2, "meta_Toys_and_Games.jsonl")}}
     for domain_name, paths in domains_to_process.items():
