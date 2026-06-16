@@ -59,7 +59,7 @@ def generate_full_embeddings(meta_json_path, id_mapping_path, output_pt_path, ba
     print("="*50)
 
 if __name__ == "__main__":
-    BASE_DIR = "../data/ele"
+    BASE_DIR = "/data1/xinyuefeng/VL-RQ-VAE/baseline/RQ-VAE/data/Toys/AmazonReviews2014/Toys/processed"
     META_PATH = os.path.join(BASE_DIR, "metadata.sentence.json")
     MAP_PATH = os.path.join(BASE_DIR, "id_mapping.json")
     OUTPUT_PATH = os.path.join(BASE_DIR, "bge_embeddings.pt")
