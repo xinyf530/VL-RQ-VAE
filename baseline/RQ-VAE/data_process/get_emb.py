@@ -1,5 +1,3 @@
-
-
 import numpy as np
 import scipy.sparse as sp
 import torch
@@ -78,7 +76,7 @@ def main():
     # 1. 加载映射字典，并准备映射关系
     # ==========================================
     print("[*] 加载 id_mapping.json ...")
-    with open('/workspace/user_code/baseline/RQ-VAE/data/Toys/id_mapping.json', 'r', encoding='utf-8') as f:
+    with open('/data1/xinyuefeng/VL-RQ-VAE/baseline/RQ-VAE/data/Toys/AmazonReviews2014/Toys/processed/id_mapping.json', 'r', encoding='utf-8') as f:
         id_mapping = json.load(f)
     
     item2id = id_mapping['item2id']
@@ -89,7 +87,7 @@ def main():
     # 2. 读取原始字符串交互序列，并转换为 0-based 整数索引
     # ==========================================
     print("[*] 加载 all_item_seqs.json 并转换序列 ...")
-    with open('/workspace/user_code/baseline/RQ-VAE/data/Toys/all_item_seqs.json', 'r', encoding='utf-8') as f:
+    with open('/data1/xinyuefeng/VL-RQ-VAE/baseline/RQ-VAE/data/Toys/AmazonReviews2014/Toys/processed/all_item_seqs.json', 'r', encoding='utf-8') as f:
         all_item_seqs = json.load(f)
         
     user_seqs_0based = []
@@ -107,7 +105,7 @@ def main():
     # 3. 加载原始的 BGE Embeddings
     # ==========================================
     print("[*] 加载原始 BGE Embeddings ...")
-    original_embeddings = torch.load('/workspace/user_code/baseline/RQ-VAE/data/Toys/bge_embeddings_text.pt', weights_only=False).cpu().numpy()
+    original_embeddings = torch.load('/data1/xinyuefeng/VL-RQ-VAE/baseline/RQ-VAE/data/Toys/AmazonReviews2014/Toys/processed/bge_embeddings.pt', weights_only=False).cpu().numpy()
     
     # 安全校验：确保 Embedding 数量与物品总数一致
     assert original_embeddings.shape[0] == num_items, \
@@ -133,7 +131,7 @@ def main():
     print("[*] 将结果转换为 PyTorch Tensor 并保存...")
     fused_emb_tensor = torch.from_numpy(fused_emb_np).float()
     
-    save_path = '/workspace/user_code/baseline/RQ-VAE/data/Toys/bge_embeddings_v2.pt'
+    save_path = '/data1/xinyuefeng/VL-RQ-VAE/baseline/RQ-VAE/data/Toys/bge_embeddings_v2.pt'
     torch.save(fused_emb_tensor, save_path)
     print(f"[*] 成功！融合后的特征已保存至 {save_path}")
     print(f"[*] Tensor 形状: {fused_emb_tensor.shape} (0-based 索引，行0代表item_id 1)")
