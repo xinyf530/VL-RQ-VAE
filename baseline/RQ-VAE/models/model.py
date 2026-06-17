@@ -151,7 +151,7 @@ class DenseDecoderBlock(nn.Module):
         return x
 
 class Tiger(nn.Module):
-    def __init__(self, total_vocab_size, vocab_sizes, max_seq_len=64, user_vocab_size=20000, sid_length=4, d_model=64, nhead=8, num_layers=8, dropout=0.1, use_tied_lm_head=False):
+    def __init__(self, total_vocab_size, vocab_sizes, max_seq_len=64, user_vocab_size=20000, sid_length=4, d_model=64, nhead=8, num_layers=8, dropout=0.1, use_tied_lm_head=True):
         super().__init__()
 
         self.use_tied_lm_head = use_tied_lm_head
