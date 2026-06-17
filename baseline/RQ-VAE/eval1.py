@@ -33,11 +33,11 @@ def main():
     MAX_K = max(K_LIST)
     TEST_BATCH_SIZE = 128  # per-GPU batch size for generation
 
-    BASE_DIR = "data/phone"
+    BASE_DIR = "/data1/xinyuefeng/VL-RQ-VAE/baseline/RQ-VAE/data/Toys/AmazonReviews2014/Toys/processed"
     #TIGER_DIR = "/workspace/user_code/ED-RQVAE/edrqvae_data/Toys/v5"
     #TIGER_DIR = "/workspace/user_code/baseline/RQ-VAE/rqvae_data/Toys/cf"
     #TIGER_DIR = "/workspace/user_code/baseline/varlen_semantic_ids/result/Toys/varlen2"
-    TIGER_DIR = "/workspace/user_code/baseline/RQ-VAE/rqvae_data/phone"
+    TIGER_DIR = "/data1/xinyuefeng/VL-RQ-VAE/baseline/RQ-VAE/rqvae_data"
 
     save_dir = "saves"
     #save_dir = "/workspace/my_folder/luozijian/ED-RQVAE/RQ-VAE/Toys/ed-rqvae"
@@ -46,12 +46,12 @@ def main():
     
     #best_model_path = os.path.join(save_dir, "tiger_best_var_16.pt")
     #best_model_path = os.path.join(save_dir, "tiger_best_v4_rq.pt")
-    best_model_path = os.path.join(save_dir, "tiger_best_phone_2D.pt")
+    best_model_path = os.path.join(save_dir, "tiger_best_toy_2D.pt")
     
     #log_file_path = "/workspace/user_code/baseline/RQ-VAE/logs/Toys/ed-rqvae/train_log_v4_8.txt"
     #log_file_path = "/workspace/user_code/baseline/RQ-VAE/logs/Toys/rqvae/train_log_v4.txt"
     #log_file_path = "/workspace/user_code/baseline/RQ-VAE/logs/Toys/varlen/train_log_v3_test.txt"
-    log_file_path = "/workspace/user_code/baseline/RQ-VAE/logs/phone/train_log_2D.txt"
+    log_file_path = "/data1/xinyuefeng/VL-RQ-VAE/baseline/RQ-VAE/logs/train_log_2D.txt"
 
 
     # ==========================================
@@ -65,7 +65,7 @@ def main():
         mapping_file=f"{BASE_DIR}/id_mapping.json",
         tiger_code_file=f"{TIGER_DIR}/item2code_final.json",
         #tiger_code_file=f"{TIGER_DIR}/tiger_item2code.json",
-        meta_file=f"{TIGER_DIR}/tiger_item2code_meta.json",
+        meta_file=f"{TIGER_DIR}/item2code_final_meta.json",
         max_seq_len=MAX_SEQ_LEN,
         #max_token_len=MAX_TOKEN_LEN,
         split='test'
