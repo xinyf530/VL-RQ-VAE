@@ -69,7 +69,7 @@ def generate_tiger_ready_ids(input_json_path, output_json_path):
     return meta
 
 if __name__ == "__main__":
-    BASE_DIR = "rqvae_data/ele"
+    BASE_DIR = "/data1/xinyuefeng/VL-RQ-VAE/baseline/RQ-VAE/rqvae_data/ele"
     INPUT_JSON = os.path.join(BASE_DIR, "item2code_baseline.json")
     
     # 输出一个新的文件，专供 TIGER 训练使用
