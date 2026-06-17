@@ -48,11 +48,13 @@ def main():
     PATIENCE = 5
     WARMUP_STEPS = 1770 # 2080 235 1770
 
-    BASE_DIR = "data/phone"
+    # BASE_DIR = "data/phone"
     #TIGER_DIR = "/workspace/user_code/ED-RQVAE/edrqvae_data/Toys/v5"
     #TIGER_DIR = "/workspace/user_code/baseline/RQ-VAE/rqvae_data/Toys/cf"
     #TIGER_DIR = "/workspace/user_code/baseline/varlen_semantic_ids/result/Toys/varlen2"
-    TIGER_DIR = "/workspace/user_code/baseline/RQ-VAE/rqvae_data/phone"
+    # TIGER_DIR = "/workspace/user_code/baseline/RQ-VAE/rqvae_data/phone"
+    BASE_DIR = "/data1/xinyuefeng/VL-RQ-VAE/baseline/RQ-VAE/data/Toys/AmazonReviews2014/Toys/processed"
+    TIGER_DIR = "/data1/xinyuefeng/VL-RQ-VAE/baseline/RQ-VAE/rqvae_data/ele"
 
     if accelerator.is_main_process:
         print("\n[*] 正在加载与构建 Dataset...")
@@ -146,7 +148,7 @@ def main():
     #log_file_path = "/workspace/user_code/baseline/RQ-VAE/logs/Toys/ed-rqvae/test.txt"
     #log_file_path = "/workspace/user_code/baseline/RQ-VAE/logs/Toys/rqvae/train_log_v4.txt"
     #log_file_path = "/workspace/user_code/baseline/RQ-VAE/logs/Toys/varlen/train_log_v3_test.txt"
-    log_file_path = "/workspace/user_code/baseline/RQ-VAE/logs/phone/train_log_2D.txt"
+    log_file_path = "/data1/xinyuefeng/VL-RQ-VAE/baseline/RQ-VAE/logs/train_log_2D.txt"
     
     if accelerator.is_main_process:
         os.makedirs(save_dir, exist_ok=True)
