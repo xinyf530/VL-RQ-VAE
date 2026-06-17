@@ -66,7 +66,7 @@ def main():
         tiger_code_file=f"{TIGER_DIR}/item2code_final.json",
         #tiger_code_file=f"{TIGER_DIR}/tiger_item2code.json",
         # meta_file=f"{TIGER_DIR}/tiger_item2code_meta.json",
-        meta_file=f"{TIGER_DIR}/item2code_meta.json",
+        meta_file=f"{TIGER_DIR}/item2code_final_meta.json",
         max_seq_len=MAX_SEQ_LEN,
         #max_token_len=MAX_TOKEN_LEN,
         split='train' 
@@ -82,7 +82,7 @@ def main():
         tiger_code_file=f"{TIGER_DIR}/item2code_final.json",
         #tiger_code_file=f"{TIGER_DIR}/tiger_item2code.json",
         # meta_file=f"{TIGER_DIR}/tiger_item2code_meta.json",
-        meta_file=f"{TIGER_DIR}/item2code_meta.json",
+        meta_file=f"{TIGER_DIR}/item2code_final_meta.json",
         max_seq_len=MAX_SEQ_LEN,
         #max_token_len=MAX_TOKEN_LEN,
         split='val'  
