@@ -37,7 +37,7 @@ def main():
     #TIGER_DIR = "/workspace/user_code/ED-RQVAE/edrqvae_data/Toys/v5"
     #TIGER_DIR = "/workspace/user_code/baseline/RQ-VAE/rqvae_data/Toys/cf"
     #TIGER_DIR = "/workspace/user_code/baseline/varlen_semantic_ids/result/Toys/varlen2"
-    TIGER_DIR = "/data1/xinyuefeng/VL-RQ-VAE/baseline/RQ-VAE/rqvae_data"
+    TIGER_DIR = "/data1/xinyuefeng/VL-RQ-VAE/baseline/RQ-VAE/rqvae_data/ele"
 
     save_dir = "saves"
     #save_dir = "/workspace/my_folder/luozijian/ED-RQVAE/RQ-VAE/Toys/ed-rqvae"
