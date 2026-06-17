@@ -151,9 +151,13 @@ def main():
     #log_file_path = "/workspace/user_code/baseline/RQ-VAE/logs/Toys/rqvae/train_log_v4.txt"
     #log_file_path = "/workspace/user_code/baseline/RQ-VAE/logs/Toys/varlen/train_log_v3_test.txt"
     log_file_path = "/data1/xinyuefeng/VL-RQ-VAE/baseline/RQ-VAE/logs/train_log_2D.txt"
-    
+
     if accelerator.is_main_process:
-        os.makedirs(save_dir, exist_ok=True)
+        log_dir = os.path.dirname(log_file_path)
+        if log_dir and not os.path.exists(log_dir):
+            os.makedirs(log_dir, exist_ok=True)
+        if not os.path.exists(log_file_path):
+            open(log_file_path, "a", encoding="utf-8").close()
 
     def print_and_log(msg):
         """仅在主卡执行打印并追加写入 txt 文件"""
