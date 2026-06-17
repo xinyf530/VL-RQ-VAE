@@ -38,11 +38,13 @@ def main():
     # A100 核心优化：提升 matmul 精度
     torch.set_float32_matmul_precision('high') 
     
-    BASE_DIR = "data/ele"
+    # BASE_DIR = "data/ele"
+    BASE_DIR = "data/Toys"
     MODEL_PATH = "rqvae_data/ele"
     os.makedirs(MODEL_PATH, exist_ok=True) # 自动创建结果文件夹
     
-    EMB_PATH = os.path.join(BASE_DIR, "bge_embeddings.pt")
+    # EMB_PATH = os.path.join(BASE_DIR, "bge_embeddings.pt")
+    EMB_PATH = os.path.join(BASE_DIR, "bge_embeddings_v2.pt")
     BEST_MODEL_PATH = os.path.join(MODEL_PATH, "best_rqvae_model.pt")
     
     # --- 2. 数据准备 ---
